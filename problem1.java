@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Complexity: O(N)
 public class problem1 {
     public static int min(int n, int[] arr) {
         if (arr == null || arr.length == 0) {

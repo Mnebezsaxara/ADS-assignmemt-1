@@ -4,18 +4,21 @@ public class problem3 {
     public static void prime(int n) {
         if (n <= 1) {
             System.out.println("Number can't be prime");
+            return;
         }
-        int count=1;
-        for(int i=1;i<=n;i++){
-            if(n%i==0){
-                count+=1;
+
+        int count = 0;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+                break; 
             }
         }
-        if(count>2){
-            System.out.println("Composite");
-        }
-        else{
+
+        if (count == 0) {
             System.out.println("Prime");
+        } else {
+            System.out.println("Composite");
         }
     }
 
@@ -28,4 +31,3 @@ public class problem3 {
         scanner.close();
     }
 }
-

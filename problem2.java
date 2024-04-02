@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Complexity: O(N)
 public class problem2 {
     public static float average(int n, int[] arr) {
         if (arr == null || arr.length == 0) {

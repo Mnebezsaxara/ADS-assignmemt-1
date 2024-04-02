@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Complexity: O(sqrt(N))
 public class problem3 {
     public static void prime(int n) {
         if (n <= 1) {

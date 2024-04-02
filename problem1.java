@@ -18,7 +18,7 @@ public class problem1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the number of elements: ");
+        System.out.print("Enter the number: ");
         int n = scanner.nextInt();
 
         int[] array = new int[n];
@@ -29,7 +29,7 @@ public class problem1 {
         }
 
         int minEl = min(n, array);
-        System.out.println("Minimum element: " + minEl);
+        System.out.println(minEl);
 
         scanner.close();
     }

@@ -1,18 +1,16 @@
 import java.util.Scanner;
-// Complexity: O(N)
-public class problem1 {
-    public static int min(int n, int[] arr) {
-        if (arr == null || arr.length == 0) {
-            System.out.println("Array is empty");
-        }
 
-        int min = arr[0];
-        for (int i = 1; i < n; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
-            }
+public class problem1 {
+    public static int minRecursive(int[] arr, int n) {
+        if (n == 1) {
+            return arr[0];
         }
-        return min;
+        int Before_min = minRecursive(arr, n - 1);
+        if (Before_min < arr[n - 1]) {
+            return Before_min;
+        } else {
+            return arr[n - 1];
+        }
     }
 
     public static void main(String[] args) {
@@ -23,12 +21,12 @@ public class problem1 {
 
         int[] array = new int[n];
 
-        System.out.println("Enter the elements of the array:");
+        System.out.print("Enter the elements of the array:");
         for (int i = 0; i < n; i++) {
             array[i] = scanner.nextInt();
         }
 
-        int minEl = min(n, array);
+        int minEl = minRecursive(array, n);
         System.out.println(minEl);
 
         scanner.close();

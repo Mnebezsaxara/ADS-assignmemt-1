@@ -1,16 +1,15 @@
 import java.util.Scanner;
-// Complexity: O(N)
+// complexity O(n)
 public class problem2 {
-    public static float average(int n, int[] arr) {
-        if (arr == null || arr.length == 0) {
-            System.out.println("Array is empty");
+    public static float average_rec(int[] arr, int n) {
+        if (n == 0) {
+            return 0;
+        } else {
+            float sum = arr[n - 1] + average_rec(arr, n - 1);
+            return sum;
         }
-        float sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum += arr[i];
-        }
-        return sum / n;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -23,7 +22,8 @@ public class problem2 {
         for (int i = 0; i < n; i++) {
             array[i] = scanner.nextInt();
         }
-        float average = average(n, array);
+
+        float average = average_rec(array, n) / n;
         System.out.println(average);
 
         scanner.close();

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// complexity O(n)
 public class problem1 {
     public static int minRecursive(int[] arr, int n) {
         if (n == 1) {

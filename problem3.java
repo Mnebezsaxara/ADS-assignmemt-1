@@ -1,21 +1,21 @@
 import java.util.Scanner;
-// Complexity: O(sqrt(N))
+// complexity O(√(N))
 public class problem3 {
-    public static void prime(int n) {
+    public static boolean Prime_rec(int n, int dvoika) {
         if (n <= 1) {
-            System.out.println("Number can't be prime");
-            return;
+            return false;
         }
-
-        int count = 0;
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                count++;
-                break; 
-            }
+        if (dvoika * dvoika > n) {
+            return true;
         }
+        if (n % dvoika == 0) {
+            return false;
+        }
+        return Prime_rec(n, dvoika + 1);
+    }
 
-        if (count == 0) {
+    public static void prime(int n) {
+        if (Prime_rec(n, 2)) {
             System.out.println("Prime");
         } else {
             System.out.println("Composite");
